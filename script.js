@@ -29,9 +29,19 @@ function updateDateTime() {
 // Update clock every second
 setInterval(updateDateTime, 1000);
 
+function initColorPicker() {
+    const picker = document.getElementById('bg-picker');
+    if (picker) {
+        picker.addEventListener('input', (e) => {
+            document.body.style.backgroundColor = e.target.value;
+        });
+    }
+}
+
 // Initial call
 document.addEventListener('DOMContentLoaded', () => {
     updateDateTime();
+    initColorPicker();
     console.log('Skoop Agent Welcome Page Initialized');
 });
 
